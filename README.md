@@ -8,7 +8,7 @@ So no local installation is required.
 
 
 ## Naming conventions
-- Basic examples: Minimal description of the given data flow in the form <fromConstruct>To<toConstruct>
+- Basic examples: Minimal description of the given data flow in the form [fromConstruct]To[toConstruct]
 - Composite examples: "Composite" + the current running index value
 - Classes: Single letters starting from A
 - Methods: Single letters starting from m, omitting o
