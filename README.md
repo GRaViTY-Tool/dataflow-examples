@@ -5,7 +5,12 @@ This repository is a collection of examples of the data flow possible in Java pr
 Besides the code of each example, there are graphical representations in the form of GraphML diagrams.
 To open/modify them, the [yEd Graph Editor](https://www.yworks.com/products/yed) can be used, which is also available as a [browser-based live version](https://www.yworks.com/products/yed-live). 
 So no local installation is required.
-
+### Possible flows
+The flows possible in the used graphical representation are:
+- paramFlow: Denotes a flow of a parameter value to another node.
+- returnFlow: Denotes a flow of a return value to another node.
+- fieldFlow: Denotes a flow of a field value to another node.
+- effectiveFlow: The overall flow from the first source to the last sink of a given domain, which summarizes all intermediate flows.
 
 ## Naming conventions
 - Basic examples: Minimal description of the given data flow in the form `[fromConstruct]To[toConstruct]`
