@@ -29,3 +29,11 @@ The current assumption is, that all relevant data flows originate or end in one 
 Thus, the number of minimal (i. e. containing only a single flow) data flow examples equals the number of combinations of these constructs, which is 3<sup>2</sup> = 9.
 
 As the examples using the naming convention of basic examples (e. g. `FieldToParam`) cover all 9 cases, the set of minimal data flow examples is complete.
+
+## Special data flow cases
+There are a few special cases of data flow, which are neither a combination of the above mentioned constructs nor a typical composite example:
+- No data flow
+- Data flow of multiple parameters flowing into the same node
+- Data flow of an object reference, which can be used to invoke methods
+
+For each of the special cases, at least one example is provided along with relevant variants (e. g. an order-sensitive example of the multiple parameter flow).
