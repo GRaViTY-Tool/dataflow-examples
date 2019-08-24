@@ -1,3 +1,5 @@
+import org.gravity.security.annotations.requirements.Secrecy;
+
 /**
  * 
  * A violation of the secrecy property with the inconsistent part being at the end of a flow.
@@ -5,10 +7,10 @@
  */
 public class A {
 
-	// Secrecy
+	@Secrecy
 	int a = 0;
 	
-	// Secrecy
+	@Secrecy
 	int b = a;
 	
 	int c = b;
