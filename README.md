@@ -33,3 +33,9 @@ There are a few special cases of data flow, which are neither a combination of t
 - Data flow of an object reference, which can be used to invoke methods
 
 For each of the special cases, at least one example is provided along with relevant variants (e. g. an order-sensitive example of the multiple parameter flow).
+
+## GReQL-Queries
+The folder 'GReQL-Queries' contains queries, which can be used with the tool GReQL of JGraLab (https://jgralab.github.io/jgralab/) to perform data flow analysis on data flow models.
+To enable the analysis with GReQL, the given .xmi files need to be converted to 'TGraphs' first.
+This can be done by the tool Ecore2Tg (https://github.com/jgralab/ecore2tg).
+The given query examples can correctly identify the violations of the data flow examples starting with 'Violation...'.
