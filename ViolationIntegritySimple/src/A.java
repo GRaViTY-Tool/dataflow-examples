@@ -4,7 +4,6 @@ import org.gravity.security.annotations.requirements.Integrity;
  * 
  * Simple violation of the integrity property.
  *
- * TODO: False positive?
  */
 public class A {
 
