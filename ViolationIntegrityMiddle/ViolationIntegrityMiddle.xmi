@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotations="http://www.gravity-tool.org/typegraph/basic#//annotations" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" xmlns:requirements="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tAnnotationTypes="//@ownedTypes.7" tName="ViolationIntegrityMiddle">
+  <packages typeGraph="/" tName="org">
+    <subpackage typeGraph="/" tName="gravity">
+      <subpackage typeGraph="/" tName="security">
+        <subpackage typeGraph="/" tName="annotations">
+          <subpackage ownedTypes="//@ownedTypes.7" typeGraph="/" tName="requirements"/>
+        </subpackage>
+      </subpackage>
+    </subpackage>
+  </packages>
+  <packages classes="//@ownedTypes.8" ownedTypes="//@ownedTypes.8" typeGraph="/" tName="(default package)"/>
+  <methods tName="m">
+    <signatures returnType="//@ownedTypes.1">
+      <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
+        <entries incomingFlows="//@methods.1/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.8" accessedBy="//@methods.1/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.1">
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TWrite" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" tTarget="//@fields.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@fields.0/@signatures.0/@definitions.0"/>
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@paramList/@entries.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
+        </tAccessing>
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="n">
+    <signatures returnType="//@ownedTypes.1">
+      <paramList first="//@methods.1/@signatures.0/@paramList/@entries.0">
+        <entries outgoingFlows="//@methods.1/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.8" returnType="//@ownedTypes.1">
+        <tAnnotation xsi:type="requirements:TIntegrity" type="//@ownedTypes.7"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.0/@signatures.0/@definitions.0" staticType="//@ownedTypes.8">
+          <ownedFlows flowSource="//@methods.1/@signatures.0/@paramList/@entries.0" flowTarget="//@methods.0/@signatures.0/@paramList/@entries.0"/>
+        </tAccessing>
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <fields tName="a">
+    <signatures type="//@ownedTypes.4">
+      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" definedBy="//@ownedTypes.8" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0">
+        <tAnnotation xsi:type="requirements:TIntegrity" type="//@ownedTypes.7"/>
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.0/@subpackage.0" tLib="true" tName="Integrity" annotations="//@fields.0/@signatures.0/@definitions.0/@tAnnotation.0 //@methods.1/@signatures.0/@definitions.0/@tAnnotation.0"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.1" signature="//@methods.1/@signatures.0 //@methods.0/@signatures.0 //@fields.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0 //@methods.1/@signatures.0/@definitions.0" tName="A">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+</org.gravity.typegraph.basic:TypeGraph>
