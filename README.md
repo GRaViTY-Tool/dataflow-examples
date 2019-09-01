@@ -1,18 +1,14 @@
 # dataflow-examples
 This repository is a collection of examples of the data flow possible in Java programs.
 
-## Graphical representations
-Besides the code of each example, there are graphical representations in the form of GraphML diagrams.
-To open/modify them, the [yEd Graph Editor](https://www.yworks.com/products/yed) can be used, which is also available as a [browser-based live version](https://www.yworks.com/products/yed-live). 
-So no local installation is required.
-### Possible flows
-The flows possible in the used graphical representation are:
-- paramFlow: Denotes a flow of a parameter value to another node.
-- returnFlow: Denotes a flow of a return value to another node.
-- fieldFlow: Denotes a flow of a field value to another node.
-- effectiveFlow: The overall flow from the first source to the last sink of a given domain, which summarizes all intermediate flows.
+## Graphical representations and data flow models
+Besides the code of each example, there are generated graphical representations in the form of dot graphs, which contain all initially inserted flows.
+These flows are reduced during model creation.
+The resulting full data flow models are given as .xmi files in each example's folder.
+The dot graphs can be found in the 'graphs' folder of each example.
 
 ## Naming conventions
+The majority of the examples use the following naming conventions:
 - Basic examples: Minimal description of the given data flow in the form `[fromConstruct]To[toConstruct]`
 - Composite examples: `Composite` + the current running index value
 - Classes: Single letters starting from A
@@ -20,7 +16,7 @@ The flows possible in the used graphical representation are:
 - Fields/parameters/locals: Single letters starting from a
 
 ## Completeness of the minimal data flow examples
-The current assumption is, that all relevant data flows originate or end in one of the following constructs:
+The underlying assumption for the minimal examples is, that all relevant data flows originate or end in one of the following constructs:
 - Fields
 - Methods, or more specifically
   - Method parameters
@@ -28,7 +24,7 @@ The current assumption is, that all relevant data flows originate or end in one 
 
 Thus, the number of minimal (i. e. containing only a single flow) data flow examples equals the number of combinations of these constructs, which is 3<sup>2</sup> = 9.
 
-As the examples using the naming convention of basic examples (e. g. `FieldToParam`) cover all 9 cases, the set of minimal data flow examples is complete.
+As the examples using the naming convention of basic examples (e. g. `FieldToParam`) cover all 9 cases, the set of minimal data flow examples is complete under the given assumption.
 
 ## Special data flow cases
 There are a few special cases of data flow, which are neither a combination of the above mentioned constructs nor a typical composite example:
