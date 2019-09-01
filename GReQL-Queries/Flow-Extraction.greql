@@ -1,0 +1,3 @@
+from m: V{TMember}, n: reachableVertices(m, <--{signature}(<--{outgoingFlows}-->{flowTarget})+) 
+report m, n
+end

@@ -1,0 +1,33 @@
+from m: taintedMembers,
+     p: V{TParameter},
+     s2: V{TSignature},
+     s: sanitizingMembers,
+     d: integrityMembers
+with
+  m <--{signature} (<--{outgoingFlows}-->{flowTarget})+ [<--{TParameterListContainsEntries} <--{TMethodSignatureContainsParamList} -->{SignatureContainsDefinitions2}]  d
+  or
+  m <--{signature} (<--{outgoingFlows}-->{flowTarget})+ p <--{TParameterListContainsEntries} <--{TMethodSignatureContainsParamList} s2 (<--{outgoingFlows}-->{flowTarget})+
+    [<--{TParameterListContainsEntries} <--{TMethodSignatureContainsParamList} -->{SignatureContainsDefinitions2}]  d
+  and not (
+    s2 --> s
+  )
+reportSet m, d
+  //path(m, <--{signature} (<--{outgoingFlows}-->{flowTarget})+ [<--{TParameterListContainsEntries} <--{TMethodSignatureContainsParamList} -->{SignatureContainsDefinitions2}],  d)
+  //path(m, <--{SignatureContainsDefinitions2} (<--{outgoingFlows}-->{flowTarget})+, p),
+//  path(p,  <--{TParameterListContainsEntries} <--{TMethodSignatureContainsParamList}, s2),
+//  path(s2, (<--{outgoingFlows}-->{flowTarget})+
+//   [<--{TParameterListContainsEntries} <--{TMethodSignatureContainsParamList} -->{SignatureContainsDefinitions2}] , d)
+
+end
+where
+   taintedMembers := from m: V{TMember}, ty: V{annotations.TAnnotationType}
+   with (m <--{tAnnotation}<--{type} ty) and (ty.tName = "Tainted") 
+   reportSet m end,
+
+   integrityMembers := from m: V{TMember}, ty: V{annotations.TAnnotationType}
+   with (m <--{tAnnotation}<--{type} ty) and (ty.tName = "Integrity") 
+   reportSet m end,
+
+   sanitizingMembers := from m: V{TMember}, ty: V{annotations.TAnnotationType}
+   with (m <--{tAnnotation}<--{type} ty) and (ty.tName = "Sanitizing") 
+   reportSet m end

@@ -1,0 +1,7 @@
+// REMARK: The query correctly identifies the ViolationIntegrity examples' violations, but could be optimized.
+from m, s: V{TAbstractFlowElement}, ty, ty2: V{annotations.TAnnotationType}, n: reachableVertices(s, (<--{outgoingFlows}-->{flowTarget})+)
+with (((m <--{signature} s) and not (m <--{tAnnotation}<--{type} ty) and (ty.tName = "Integrity"))
+or (s <--{TParameterListContainsEntries}<--{TMethodSignatureContainsParamList}-->{SignatureContainsDefinitions2} m) and not (m <--{tAnnotation}<--{type} ty) and (ty.tName = "Integrity"))
+and ((n <--{tAnnotation}<--{type} ty2) and (ty2.tName = "Integrity")) and hasType{TMember}(n)
+report m, n
+end

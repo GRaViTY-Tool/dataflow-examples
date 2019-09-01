@@ -1,0 +1,6 @@
+// REMARK: The query correctly identifies the ViolationSecrecy examples' violations, but could be optimized.
+from m, s: V{TAbstractFlowElement}, ty, ty2: V{annotations.TAnnotationType}, n: reachableVertices(s, (<--{outgoingFlows}-->{flowTarget})+)
+with (m <--{signature} s) and (m <--{tAnnotation}<--{type} ty) and (ty.tName = "Secrecy") 
+and not ((n <--{tAnnotation}<--{type} ty2) and (ty2.tName = "Secrecy")) and hasType{TMember}(n)
+report m, n
+end
